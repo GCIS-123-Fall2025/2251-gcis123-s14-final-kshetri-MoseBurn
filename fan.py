@@ -39,7 +39,11 @@ Returns:
 
 def turn_on(fan,speed=None):
     if (speed >= 1 and speed <= 10):
+        fan.is_on = True
+        fan.speed = speed
         return True
+    fan.is_on = False
+    fan.speed = 0
     return False
 
 """
@@ -49,6 +53,8 @@ Parameters:    fan - a fan object
 Returns:    None
 """
 def turn_off(fan):
+    fan.is_on = False
+    fan.speed = 0
     return None
 
 """
@@ -63,13 +69,12 @@ Example:
 More test cases in main() method
 """
 def get_state(fan):
+    
     return (fan.brand, fan.is_on, fan.speed)
 
 
 def main():
-    fan = Fan("Holmes")
-    
-
+    fan = Fan("Holmes") 
     assert get_state(fan) == ("Holmes", False, 0)
     assert turn_on(fan,3) == True
     assert get_state(fan) == ("Holmes", True, 3)
