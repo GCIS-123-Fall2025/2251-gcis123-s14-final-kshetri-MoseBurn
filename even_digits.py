@@ -1,4 +1,3 @@
-import node_stack
 
 """
 Course: GCIS 123 (2251)
@@ -23,8 +22,18 @@ For credit your function must use a stack or a queue in a significant way.
 """
 
 def even_digits(integer):
-    pass # please replace with your solution
-
+    NewList = []
+    z = 0
+    for i in integer:
+        print(i)
+    """      
+    while z != integer:
+        if integer[z] % 2:
+            NewList.append(i)
+        z += 1       
+    """
+    print(NewList)
+    return NewList
 
 
 
@@ -65,3 +74,10 @@ def test_even_digits_1234567890():
     actual = even_digits(integer)
     # analyze
     assert expected == actual
+
+def main():
+    test_even_digits_34()
+    test_even_digits_1234567890()
+    test_even_digits_1()
+    test_even_digits_2()
+if __name__ in "__main__": main()

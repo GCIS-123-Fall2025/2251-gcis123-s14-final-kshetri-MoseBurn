@@ -18,11 +18,23 @@ Write down the manual test by creating at least two items.
 """
 
 class Item:
-    pass # please replace with your solution
+    
+    def __init__(self, code, name, price):
+        self.__code = code
+        self.__name = name
+        self.__price = price
 
+    def __eq__(self, code):
+            return True
+    def __en__(self, code):
+        return False
 
 # manual test from main() method
-def main():     pass
- 
+def main():
+    Item1 = Item("ABCD-1234", "Silky Camisole", 24)
+    Item2 = Item("ABCD-1234", "Silky Camisole1", 24)
+    print(Item1 == Item2)
 
+    Item3 = Item("ABCD-1235", "Silky Camisoles", 25)
+    print(Item1 != Item3)
 if __name__ == "__main__":    main()
