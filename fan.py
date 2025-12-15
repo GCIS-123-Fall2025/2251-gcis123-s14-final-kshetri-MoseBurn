@@ -37,13 +37,11 @@ Returns:
 
 """
 
-def turn_on(fan,speed=None):
+def turn_on(fan, speed):
     if (speed >= 1 and speed <= 10):
         fan.is_on = True
         fan.speed = speed
         return True
-    fan.is_on = False
-    fan.speed = 0
     return False
 
 """
